@@ -1,0 +1,28 @@
+@charset "ISO-8859-1";
+html, body, .container-login, .container-logo{
+	height: 100%;
+}
+.container-logo{
+	background:url(../../images/logo.png);
+	background-position:50% 50%;
+	background-repeat:no-repeat;
+}
+.container-form{
+	background-color: #06145a;
+	height: 100%;
+}
+.container-form div.row{
+	height: 100%;
+}
+
+.container-form div.row div form{
+	margin-top:50%;
+}
+
+.container-form label{
+	color: #FFFFFF;
+}
+
+.link-logup{
+	color: #0583BC;
+}
