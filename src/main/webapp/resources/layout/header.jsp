@@ -4,9 +4,14 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
+	
 	<title>INEI</title>
+	
 	<link rel="stylesheet" href="../../resources/libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../resources/mylibs/css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+	
 	<script src="../../resources/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-	</head>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+</head>
 <body>
