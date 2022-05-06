@@ -1,16 +1,7 @@
 
 <%@include file="../../resources/layout/header.jsp"%>
+<%@include file="../../resources/layout/navbar.jsp"%>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-own">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="#">
-			<img src="../../resources/images/logo-blanco.png" alt="" width="75.6" height="48">
-		</a>
-		<div class="d-flex">
-			<button id="btn-search" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
-    	</div>
-	</div>
-</nav>
 <section id="section-search">
 	<h3 class="fw-bolder">BUSCAR CONTENIDO</h3>
 	<form>
@@ -50,7 +41,8 @@
   			<div class="col-4">
   			</div>
   			<div class="col-1">
-    			<button type="submit" class="btn btn-primary">APLICAR</button>
+    			<!--<button type="submit" class="btn btn-primary">APLICAR</button>-->
+    			<a href="buscador2.jsp" class="btn btn-primary" role="button">APLICAR</a>
   			</div>
 		</div>
 	</form>
@@ -79,7 +71,7 @@
 					</div>
 					<div class="col-md-8">
 						<div class="card-body">
-							<h5 class="card-title">"Avance Económico y Social Departamental", Diciembre 2000.</h5>
+							<h5 class="card-title"><a href="buscador3.jsp">"Avance Económico y Social Departamental", Diciembre 2000.</a></h5>
 							<p class="card-text">Danfort, Ramiro</p>
 						</div>
 					</div>

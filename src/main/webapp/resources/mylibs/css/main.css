@@ -39,13 +39,16 @@ html, body, .container-login, .container-logo{
 	padding: 60px 90px;
 	color: #FFFFFF;
 }
+.section-index{
+	padding: 150px 90px !important;
+}
 .search-black{
 	color: #000000;
 }
 .bg-own{
 	background-color: #06145a;
 }
-#btn-search{
+#btn-search, #btn-home{
 	border-radius: 50%;
 	margin-right: 80px;
 }
@@ -54,4 +57,7 @@ html, body, .container-login, .container-logo{
 }
 #section-result .card{
 	border: 0 !important;
+}
+#libros, #result-libros{
+	padding: 90px;
 }

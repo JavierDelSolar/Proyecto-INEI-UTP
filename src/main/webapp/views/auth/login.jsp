@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6">
-				<form action="../../Auth" method="post">
+				<form action="../index/index.jsp" method="post">
 					<div class="mb-5">
 						<label for="user" class="form-label fw-bolder">USUARIO</label>
 						<input type="text" class="form-control" id="user" name="user" placeholder="Usuario">

@@ -18,8 +18,8 @@ public class Auth extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/promocion", "root", "");
-			PreparedStatement ps = cn.prepareStatement("SELECT * FROM tblUsuarios WHERE usuario = ? AND password = ?");
+			Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_biblioteca", "root", "");
+			PreparedStatement ps = cn.prepareStatement("SELECT * FROM tblUsuarios WHERE Id_user = ? AND Contra = ?");
 			ps.setString(1, user);
 			ps.setString(2, pass);
 			ResultSet rs = ps.executeQuery();
