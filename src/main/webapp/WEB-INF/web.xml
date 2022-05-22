@@ -49,4 +49,24 @@
     <servlet-name>IndexController</servlet-name>
     <url-pattern>/IndexController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Buscador</display-name>
+    <servlet-name>Buscador</servlet-name>
+    <servlet-class>Controller.Buscador</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Buscador</servlet-name>
+    <url-pattern>/Buscador</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminController</display-name>
+    <servlet-name>AdminController</servlet-name>
+    <servlet-class>Controller.AdminController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminController</servlet-name>
+    <url-pattern>/AdminController</url-pattern>
+  </servlet-mapping>
 </web-app>

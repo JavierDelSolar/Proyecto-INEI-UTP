@@ -2,16 +2,18 @@ package Model;
 
 public class User {
 	private String usuario;
-	private String pass;
+	private String password;
+	private String tipo;
 	
 	public User() {
 		
 	}
 	
-	public User(String usuario, String pass) {
+	public User(String usuario, String password, String tipo) {
 		super();
 		this.usuario = usuario;
-		this.pass = pass;
+		this.password = password;
+		this.tipo = tipo;
 	}
 	
 	public String getUsuario() {
@@ -20,10 +22,18 @@ public class User {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-	public String getPass() {
-		return pass;
+	public String getPassword() {
+		return password;
 	}
-	public void setPass(String pass) {
-		this.pass = pass;
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 }

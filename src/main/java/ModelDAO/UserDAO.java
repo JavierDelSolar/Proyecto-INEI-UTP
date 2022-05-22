@@ -29,7 +29,7 @@ public class UserDAO implements UserInterface{
 			while(rs.next()) {
 				User user = new User();
 				user.setUsuario(rs.getString("Id_user"));
-				user.setPass(rs.getString("Contra"));
+				user.setPassword(rs.getString("Contra"));
 				list.add(user);
 			}
 		}catch (Exception e) {

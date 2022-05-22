@@ -4,8 +4,7 @@ public class Auth {
 	private String usuario;
 	private String pass;
 	
-	public Auth() {
-		
+	public Auth(){
 	}
 	
 	public Auth(String usuario, String pass) {
