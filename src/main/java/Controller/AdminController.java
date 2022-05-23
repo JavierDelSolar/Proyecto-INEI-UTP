@@ -41,9 +41,26 @@ public class AdminController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String acceso = "";
-		String action = request.getParameter("accion");
+		String action = request.getParameter("accion")==""?"Solo":request.getParameter("accion");
 		LibroDAO libroDAO = new LibroDAO();
 		switch(action.toLowerCase()) {
+			case "solo":
+				Part imagen1 = request.getPart("imagen");
+				Part pdf1 = request.getPart("pdf");
+				String imagenName1 = imagen1.getSubmittedFileName();
+				String pdfName1 = pdf1.getSubmittedFileName();
+				Libro l1 = new Libro();
+				l1.setRuta_imagen(imagenName1);
+				l1.setRuta_pdf(pdfName1);
+				
+				libroDAO.SubirLibro(l1);
+				
+				System.out.print("Listo");
+				
+				RequestDispatcher rd1;
+				rd1 = request.getRequestDispatcher(ADMIN);
+				rd1.forward(request, response);
+				break;
 			case "subir":
 				acceso = ADMIN;
 				String nombre = request.getParameter("nombre");

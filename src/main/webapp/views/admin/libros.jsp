@@ -2,7 +2,7 @@
 <%@include file="../../resources/layout/navbar.jsp"%>
 <section id="section-search">
 	<h3 class="fw-bolder">AGREGAR LIBROS</h3>
-	<form action="admin" method="post"><!-- enctype="multipart/form-data" -->
+	<form action="admin" method="post" enctype="multipart/form-data"><!-- enctype="multipart/form-data" -->
 		<input type="hidden" name="accion" value="subir">
 		<div class="row align-items-center">
 			<div class="col-2">

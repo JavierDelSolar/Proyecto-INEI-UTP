@@ -42,12 +42,22 @@ public class BuscadorController extends HttpServlet {
 		switch(action.toLowerCase()) {
 			case "buscar":
 				acceso = URL;
-				String buscar = request.getParameter("buscar");
+				String nombre = request.getParameter("nombre");
+				String descripcion = request.getParameter("descripcion");
+				String autor = request.getParameter("autor");
+				String anio = request.getParameter("anio");
 				
 				request.setAttribute("Nivel", 2);
-				request.setAttribute("Buscar", buscar);
+				request.setAttribute("Nombre", nombre);
+				request.setAttribute("Descripcion", descripcion);
+				request.setAttribute("Autor", autor);
+				request.setAttribute("Anio", anio);
 				
 				Libro libro = new Libro();
+				libro.setNombre(nombre);
+				libro.setDescripcion(descripcion);
+				libro.setAutor(autor);
+				libro.setFecha(anio);
 				
 				LibroDAO libroDAO = new LibroDAO();
 				List<Libro> lista = libroDAO.listar(libro);

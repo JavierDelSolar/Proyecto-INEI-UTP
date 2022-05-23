@@ -8,6 +8,7 @@
 	<h1>INEI</h1>
 </section>
 <section id="libros">
+	<!--  
 	<h4>Libros Contables</h4>
 	<br>
 	<div class="row">
@@ -31,5 +32,6 @@
 		</div>
 		<% } %>
 	</div>
+	-->
 </section>
 <%@include file="../../resources/layout/footer.jsp"%>
