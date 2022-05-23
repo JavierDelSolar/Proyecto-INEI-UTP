@@ -31,7 +31,6 @@ public class LibroDAO implements LibroInterface{
 		String query = "SELECT * "
 				+ "FROM documento "
 				+ "WHERE 1"+Where;
-		System.out.print(libro.getNombre());
 		try {
 			cn = conexion.getConnection();
 			st = cn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
@@ -54,9 +53,6 @@ public class LibroDAO implements LibroInterface{
 		String fecha = libro.getFecha()==null?"2022-05-01":libro.getFecha();
 		String ruta_imagen = libro.getRuta_imagen()==null?"":libro.getRuta_imagen();
 		String ruta_pdf = libro.getRuta_pdf()==null?"":libro.getRuta_pdf();
-		
-		//String query = "INSERT INTO documento(nombre, descripcion, autor, fecha_creacion, ruta_pdf, ruta_imagen, id_categoria, tipo_documento) VALUES ";
-		//query = query + "('"+nombre+"', '"+descripcion+"', '"+autor+"', '"+fecha+"', '"+ruta_imagen+"', '"+ruta_pdf+"', '1', '1')";
 		
 		String query = "INSERT INTO documento(nombre, descripcion, autor, fecha_creacion, ruta_pdf, ruta_imagen, id_categoria, tipo_documento) VALUES (?,?,?,?,?,?, '1', '1')";
 		try {
