@@ -22,10 +22,10 @@ public class LibroDAO implements LibroInterface{
 	@Override
 	public List<Libro> listar(Libro libro) {
 		List<Libro> lista = new ArrayList<Libro>();
-		String nombre = libro.getNombre()==null?"":" AND nombre LIKE '%"+libro.getNombre()+"%'";
-		String descripcion = libro.getDescripcion()==null?"":" AND descripcion LIKE '%"+libro.getDescripcion()+"%'";
-		String autor = libro.getAutor()==null?"":" AND autor LIKE '%"+libro.getAutor()+"%'";
-		String anio = libro.getFecha()==null?"":" AND YEAR(fecha_creacion) = '"+libro.getFecha()+"'";
+		String nombre = libro.getNombre()==null||libro.getNombre()==""?"":" AND nombre LIKE '%"+libro.getNombre()+"%'";
+		String descripcion = libro.getDescripcion()==null||libro.getDescripcion()==""?"":" AND descripcion LIKE '%"+libro.getDescripcion()+"%'";
+		String autor = libro.getAutor()==null||libro.getAutor()==""?"":" AND autor LIKE '%"+libro.getAutor()+"%'";
+		String anio = libro.getFecha()==null||libro.getFecha()==""?"":" AND YEAR(fecha_creacion) = '"+libro.getFecha()+"'";
 		
 		String Where = nombre+descripcion+autor+anio;
 		String query = "SELECT * "
