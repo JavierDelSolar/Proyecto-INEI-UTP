@@ -7,4 +7,5 @@ import Model.Libro;
 public interface LibroInterface {
 	public List<Libro> listar(Libro libro);
 	public void SubirLibro(Libro libro);
+	public boolean deleteLibro(int id); 
 }

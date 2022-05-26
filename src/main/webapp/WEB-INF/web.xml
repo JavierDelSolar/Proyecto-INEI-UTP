@@ -21,16 +21,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>UserController</display-name>
-    <servlet-name>UserController</servlet-name>
-    <servlet-class>Controller.UserController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>UserController</servlet-name>
-    <url-pattern>/UserController</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>AuthController</display-name>
     <servlet-name>AuthController</servlet-name>
     <servlet-class>Controller.AuthController</servlet-class>
@@ -68,5 +58,15 @@
   <servlet-mapping>
     <servlet-name>AdminController</servlet-name>
     <url-pattern>/AdminController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LibroController</display-name>
+    <servlet-name>LibroController</servlet-name>
+    <servlet-class>Controller.LibroController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LibroController</servlet-name>
+    <url-pattern>/LibroController</url-pattern>
   </servlet-mapping>
 </web-app>

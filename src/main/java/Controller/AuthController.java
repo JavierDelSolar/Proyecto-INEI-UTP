@@ -11,8 +11,9 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 import Model.Auth;
-import Model.User;
+import Model.Cliente;
 import ModelDAO.AuthDAO;
+import ModelDAO.ClienteDAO;
 
 /**
  * Servlet implementation class AuthController
@@ -54,12 +55,16 @@ public class AuthController extends HttpServlet {
 		String acceso = "";
 		String action = request.getParameter("accion");
 		AuthDAO authDAO = new AuthDAO();
+		ClienteDAO clienteDAO = new ClienteDAO();
+		String user, pass, name, mail;
+		Auth auth;
+		Cliente cliente;
 		switch(action.toLowerCase()) {
 			case "login":
 				acceso = LOGIN;
-				String user = request.getParameter("user");
-				String pass = request.getParameter("pass");
-				Auth auth = new Auth(user, pass);
+				user = request.getParameter("user");
+				pass = request.getParameter("pass");
+				auth = new Auth(user, pass);
 				boolean validacion = authDAO.validate(auth);
 				if(validacion) {
 					HttpSession session = request.getSession(true);
@@ -78,7 +83,21 @@ public class AuthController extends HttpServlet {
 				}
 				break;
 			case "logup":
-				acceso = LOGUP;
+				user = request.getParameter("user");
+				name = request.getParameter("name");
+				mail = request.getParameter("mail");
+				pass = request.getParameter("pass");
+				auth = new Auth(user, pass);
+				cliente = new Cliente(name, mail);
+				cliente.setUsuario(user);
+				Boolean bAuth = authDAO.add(auth);
+				if(bAuth) {
+					Boolean bCliente = clienteDAO.add(cliente);
+				}
+				request.setAttribute("Validador", bAuth);
+				RequestDispatcher rd;
+				rd = request.getRequestDispatcher(LOGUP);
+				rd.forward(request, response);
 				break;					
 		}
 	}

@@ -26,8 +26,10 @@ public class LibroDAO implements LibroInterface{
 		String descripcion = libro.getDescripcion()==null||libro.getDescripcion()==""?"":" AND descripcion LIKE '%"+libro.getDescripcion()+"%'";
 		String autor = libro.getAutor()==null||libro.getAutor()==""?"":" AND autor LIKE '%"+libro.getAutor()+"%'";
 		String anio = libro.getFecha()==null||libro.getFecha()==""?"":" AND YEAR(fecha_creacion) = '"+libro.getFecha()+"'";
+		String categoria = libro.getId_categoria()==0?"":" AND id_categoria = " + libro.getId_categoria();
+		String tipo = libro.getTipo_documento()==0?"":" AND tipo_documento = " + libro.getTipo_documento();
 		
-		String Where = nombre+descripcion+autor+anio;
+		String Where = nombre+descripcion+autor+anio+categoria+tipo;
 		String query = "SELECT * "
 				+ "FROM documento "
 				+ "WHERE 1"+Where;
@@ -68,6 +70,23 @@ public class LibroDAO implements LibroInterface{
 		}catch (Exception e) {
 			System.out.println(e);
 		}
+	}
+
+	@Override
+	public boolean deleteLibro(int id) {
+		String query = "DELETE FROM documento WHERE id = ?";
+		try {
+			cn = conexion.getConnection();
+			PreparedStatement ps = cn.prepareStatement(query);
+			ps.setInt(1, id);
+			int row = ps.executeUpdate();
+			if(row==1) {
+				return true;
+			}
+		}catch (Exception e) {
+			System.out.println("Error Delete Libro: "+e);
+		}
+		return false;
 	}
 	
 }

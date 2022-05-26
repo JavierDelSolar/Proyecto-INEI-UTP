@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
 
 import java.io.IOException;
+import java.util.List;
 
 import Model.Libro;
 import ModelDAO.LibroDAO;
@@ -33,6 +34,11 @@ public class AdminController extends HttpServlet {
 		switch(action.toLowerCase()) {
 			case "libros":
 				acceso = ADMIN;
+				Libro libro = new Libro();
+				
+				LibroDAO libroDAO = new LibroDAO();
+				List<Libro> lista = libroDAO.listar(libro);
+				request.setAttribute("Lista", lista);
 				break;					
 		}
 		RequestDispatcher vista = request.getRequestDispatcher(acceso);

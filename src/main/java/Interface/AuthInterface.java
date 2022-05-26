@@ -3,7 +3,7 @@ package Interface;
 import java.util.List;
 
 import Model.Auth;
-import Model.User;
+import Model.Cliente;
 
 public interface AuthInterface {
 	public List listar();
